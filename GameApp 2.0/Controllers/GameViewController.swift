@@ -3,7 +3,6 @@ import UIKit
 class GameViewController: UIViewController {
     //MARK: - properties
     private var counter = 0
-    private var timeInterval: TimeInterval = 10
     private var intersectionCheckTimer = Timer()
     private var counterTimer = Timer()
     private var animatorForShipImageView: UIViewPropertyAnimator?
