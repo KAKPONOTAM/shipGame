@@ -52,7 +52,7 @@ class GameViewController: UIViewController {
         imageView.frame = CGRect(x: 10, y: view.frame.size.height / 2, width: 150, height: 75)
         imageView.image = UIImage(named: "sub")
         imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = true
+        imageView.isHidden = false
         return imageView
     }()
     
@@ -183,8 +183,8 @@ class GameViewController: UIViewController {
     }
     
     private func gameStarted() {
-        if let submarineImageFilename = UserDefaults.standard.object(forKey: "submarineImage") as? String,
-           let obstacleImageFilename = UserDefaults.standard.object(forKey: "obstacle") as? String {
+        if let submarineImageFilename = UserDefaults.standard.object(forKey: UserDefaultsKeys.submarineKey) as? String,
+           let obstacleImageFilename = UserDefaults.standard.object(forKey: UserDefaultsKeys.obstaclesKey) as? String {
             shipsImageView.image = shipsImagesArray.randomElement()
             
             let loadedSubmarineImage = FileManager.loadImage(fileName: submarineImageFilename)
@@ -201,6 +201,7 @@ class GameViewController: UIViewController {
             intersectionCheckTimer.fire()
             
         } else {
+            
             shipsImageView.image = shipsImagesArray.randomElement()
             submarineImageView.image = UIImage(named: "sub")
             obstaclesImageView.image = UIImage(named: "shark")
