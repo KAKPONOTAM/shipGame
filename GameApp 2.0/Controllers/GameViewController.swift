@@ -113,6 +113,7 @@ class GameViewController: UIViewController {
         view.backgroundColor = .gray
         addSubview()
         setupConstraints()
+        beginGameWithGyro()
     }
     
     //MARK: - methods
