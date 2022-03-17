@@ -52,7 +52,7 @@ class GameViewController: UIViewController {
         imageView.frame = CGRect(x: 10, y: view.frame.size.height / 2, width: 150, height: 75)
         imageView.image = UIImage(named: "sub")
         imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = false
+        imageView.isHidden = true
         return imageView
     }()
     
@@ -118,8 +118,16 @@ class GameViewController: UIViewController {
         view.backgroundColor = .gray
         addSubview()
         setupConstraints()
-        beginGameWithGyro()
     }
+    
+//    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+//        switch motion {
+//        case .motionShake:
+//            gameStarted()
+//
+//        case .
+//        }
+//    }
     
     //MARK: - methods
     private func addSubview() {
@@ -173,28 +181,10 @@ class GameViewController: UIViewController {
         ])
     }
     
-    private func beginGameWithGyro() {
-        if coreMotionManager.isGyroAvailable {
-            coreMotionManager.startGyroUpdates(to: .main) { [weak self] data, error in
-                guard let gyro = data?.rotationRate else { return }
-                
-                if gyro.y >= 2 && gyro.z >= 1 {
-                    self?.shakeDescriptionLabel.isHidden = true
-                    self?.submarineImageView.isHidden = false
-                    self?.gameStarted()
-                }
-            }
-        } else {
-            let alert = UIAlertController(title: "Gyro is not available", message: "", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            
-            alert.addAction(okAction)
-            
-            present(alert, animated: true, completion: nil)
-        }
-    }
-    
     private func gameStarted() {
+        submarineImageView.isHidden = false
+        shakeDescriptionLabel.isHidden = true
+        
         if let submarineImageFilename = UserDefaults.standard.object(forKey: UserDefaultsKeys.submarineKey) as? String,
            let obstacleImageFilename = UserDefaults.standard.object(forKey: UserDefaultsKeys.obstaclesKey) as? String {
             shipsImageView.image = shipsImagesArray.randomElement()
