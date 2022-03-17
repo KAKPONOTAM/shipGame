@@ -107,6 +107,11 @@ class GameViewController: UIViewController {
         return label
     }()
     
+    deinit {
+        intersectionCheckTimer.invalidate()
+        counterTimer.invalidate()
+    }
+    
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,12 +178,19 @@ class GameViewController: UIViewController {
             coreMotionManager.startGyroUpdates(to: .main) { [weak self] data, error in
                 guard let gyro = data?.rotationRate else { return }
                 
-                if gyro.z >= 2 {
+                if gyro.y >= 2 && gyro.z >= 1 {
                     self?.shakeDescriptionLabel.isHidden = true
                     self?.submarineImageView.isHidden = false
                     self?.gameStarted()
                 }
             }
+        } else {
+            let alert = UIAlertController(title: "Gyro is not available", message: "", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
         }
     }
     
