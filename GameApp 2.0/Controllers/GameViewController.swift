@@ -1,4 +1,5 @@
 import UIKit
+import CoreMotion
 
 class GameViewController: UIViewController {
     //MARK: - properties
@@ -11,6 +12,7 @@ class GameViewController: UIViewController {
     private let dateFormatter = DateFormatter()
     private let date = Date.now
     private let userDefaultsManager = UserDefaultsManager.shared
+    private let coreMotionManager = CMMotionManager()
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -50,6 +52,7 @@ class GameViewController: UIViewController {
         imageView.frame = CGRect(x: 10, y: view.frame.size.height / 2, width: 150, height: 75)
         imageView.image = UIImage(named: "sub")
         imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
         return imageView
     }()
     
@@ -96,13 +99,20 @@ class GameViewController: UIViewController {
         return label
     }()
     
+    private lazy var shakeDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.frame = CGRect(x: 10, y: 10, width: view.frame.width - 10, height: 30)
+        label.text = "Shake phone to start the game"
+        return label
+    }()
+    
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
         addSubview()
         setupConstraints()
-        gameStarted()
     }
     
     //MARK: - methods
@@ -117,6 +127,7 @@ class GameViewController: UIViewController {
         backgroundImageView.addSubview(shipsImageView)
         backgroundImageView.addSubview(submarineImageView)
         backgroundImageView.addSubview(boomImageView)
+        backgroundImageView.addSubview(shakeDescriptionLabel)
     }
     
     private func setupConstraints() {
@@ -154,6 +165,20 @@ class GameViewController: UIViewController {
             scoreLabel.trailingAnchor.constraint(equalTo: buttonUp.leadingAnchor, constant: -100),
             scoreLabel.bottomAnchor.constraint(equalTo: buttonUp.bottomAnchor)
         ])
+    }
+    
+    private func beginGameWithGyro() {
+        if coreMotionManager.isGyroAvailable {
+            coreMotionManager.startGyroUpdates(to: .main) { [weak self] data, error in
+                guard let gyro = data?.rotationRate else { return }
+                
+                if gyro.z >= 2 {
+                    self?.shakeDescriptionLabel.isHidden = true
+                    self?.submarineImageView.isHidden = false
+                    self?.gameStarted()
+                }
+            }
+        }
     }
     
     private func gameStarted() {
