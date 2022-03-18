@@ -70,26 +70,6 @@ class GameViewController: UIViewController {
         return button
     }()
     
-    private let buttonUp: UIButton = {
-        let button = UIButton()
-        let buttonConfiguration = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonUpTapped), for: .touchUpInside)
-        button.setImage(UIImage(systemName: "arrowtriangle.up.square", withConfiguration: buttonConfiguration), for: .normal)
-        button.tintColor = .green
-        return button
-    }()
-    
-    private let buttonDown: UIButton = {
-        let button = UIButton()
-        let buttonConfiguration = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
-        button.setImage(UIImage(systemName: "arrowtriangle.down.square", withConfiguration: buttonConfiguration), for: .normal)
-        button.tintColor = .red
-        button.addTarget(self, action: #selector(buttonDownTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private let scoreLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -120,22 +100,11 @@ class GameViewController: UIViewController {
         setupConstraints()
     }
     
-//    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-//        switch motion {
-//        case .motionShake:
-//            gameStarted()
-//
-//        case .
-//        }
-//    }
-    
     //MARK: - methods
     private func addSubview() {
         view.addSubview(backgroundImageView)
         
         backgroundImageView.addSubview(exitButton)
-        backgroundImageView.addSubview(buttonUp)
-        backgroundImageView.addSubview(buttonDown)
         backgroundImageView.addSubview(scoreLabel)
         backgroundImageView.addSubview(obstaclesImageView)
         backgroundImageView.addSubview(shipsImageView)
@@ -160,24 +129,10 @@ class GameViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            buttonUp.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor, multiplier: 1 / 7),
-            buttonUp.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor, constant: -50),
-            buttonUp.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor, multiplier: 1 / 10),
-            buttonUp.bottomAnchor.constraint(equalTo: backgroundImageView.bottomAnchor, constant: -70)
-        ])
-        
-        NSLayoutConstraint.activate([
-            buttonDown.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor, multiplier: 1 / 7),
-            buttonDown.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor, constant: 50),
-            buttonDown.widthAnchor.constraint(equalTo: backgroundImageView.widthAnchor, multiplier: 1 / 10),
-            buttonDown.bottomAnchor.constraint(equalTo: backgroundImageView.bottomAnchor, constant: -70)
-        ])
-        
-        NSLayoutConstraint.activate([
-            scoreLabel.heightAnchor.constraint(equalTo: backgroundImageView.heightAnchor, multiplier: 1 / 7),
-            scoreLabel.leadingAnchor.constraint(equalTo: buttonDown.trailingAnchor, constant: 100),
-            scoreLabel.trailingAnchor.constraint(equalTo: buttonUp.leadingAnchor, constant: -100),
-            scoreLabel.bottomAnchor.constraint(equalTo: buttonUp.bottomAnchor)
+            scoreLabel.bottomAnchor.constraint(equalTo: backgroundImageView.bottomAnchor, constant: -50),
+            scoreLabel.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor, constant: 30),
+            scoreLabel.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor, constant: -30),
+            scoreLabel.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -214,8 +169,8 @@ class GameViewController: UIViewController {
             self.intersectionCheckTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(intersectionCheck), userInfo: nil, repeats: true)
             
             intersectionCheckTimer.fire()
+        }
     }
-}
     
     @objc private func exitButtonTapped() {
         switch counter {
@@ -311,7 +266,7 @@ class GameViewController: UIViewController {
             let dateString = dateFormatter.string(from: date)
             
             let gameResults = GameResults(result: result, resultDate: dateString)
-          
+            
             userDefaultsManager.saveResults(results: gameResults)
             
             let localizedGameOverText = "GAME OVER".localized
@@ -323,23 +278,31 @@ class GameViewController: UIViewController {
         }
     }
     
-    @objc private func buttonUpTapped() {
-        UIView.animate(withDuration: 0.3) {
-            self.submarineImageView.frame.origin.y -= 50
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        switch motion {
+        case .motionShake:
+            gameStarted()
             
-            if self.submarineImageView.frame.origin.y <= self.view.frame.minY - self.submarineImageView.frame.height / 1.5 {
-                self.buttonDownTapped()
+        case.remoteControlBeginSeekingForward:
+            UIView.animate(withDuration: 0.3) {
+                self.submarineImageView.frame.origin.y += 50
+                
+                if self.submarineImageView.frame.origin.y >= self.view.frame.maxY - self.submarineImageView.frame.height {
+                    self.submarineImageView.frame.origin.y -= 50
+                }
             }
-        }
-    }
-    
-    @objc private func buttonDownTapped() {
-        UIView.animate(withDuration: 0.3) {
-            self.submarineImageView.frame.origin.y += 50
             
-            if self.submarineImageView.frame.origin.y >= self.view.frame.maxY - self.submarineImageView.frame.height / 1.5 {
-                self.buttonUpTapped()
+        case .remoteControlBeginSeekingBackward:
+            UIView.animate(withDuration: 0.3) {
+                self.submarineImageView.frame.origin.y -= 50
+                
+                if self.submarineImageView.frame.origin.y <= self.view.frame.minY - self.submarineImageView.frame.height {
+                    self.submarineImageView.frame.origin.y += 50
+                }
             }
+            
+        default:
+            break
         }
     }
 }
