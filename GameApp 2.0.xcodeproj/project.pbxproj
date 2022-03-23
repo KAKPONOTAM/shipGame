@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662658D127EB405A008B1030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 662658D027EB405A008B1030 /* GoogleService-Info.plist */; };
 		6685A19427E1EB84007EBE9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A19327E1EB84007EBE9E /* AppDelegate.swift */; };
 		6685A19827E1EB84007EBE9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A19727E1EB84007EBE9E /* MainViewController.swift */; };
 		6685A19D27E1EB85007EBE9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6685A19C27E1EB85007EBE9E /* Assets.xcassets */; };
@@ -22,9 +23,14 @@
 		6685A1C227E20970007EBE9E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A1C127E20970007EBE9E /* UserDefaults.swift */; };
 		6685A1C527E20ED4007EBE9E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A1C427E20ED4007EBE9E /* FileManager.swift */; };
 		6685A1C827E22BCB007EBE9E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A1C727E22BCB007EBE9E /* UserDefaultsManager.swift */; };
+		C0A73EF580585E096D2E7496 /* Pods_GameApp_2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C6A1E50ABD95E1F9327774 /* Pods_GameApp_2_0.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C6A1E50ABD95E1F9327774 /* Pods_GameApp_2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameApp_2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE98A54C89B47C5721003E3 /* Pods-GameApp 2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameApp 2.0.release.xcconfig"; path = "Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0.release.xcconfig"; sourceTree = "<group>"; };
+		42D282A3B911FEE6BC47F974 /* Pods-GameApp 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameApp 2.0.debug.xcconfig"; path = "Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0.debug.xcconfig"; sourceTree = "<group>"; };
+		662658D027EB405A008B1030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6685A19027E1EB84007EBE9E /* GameApp 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameApp 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6685A19327E1EB84007EBE9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6685A19727E1EB84007EBE9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -51,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A73EF580585E096D2E7496 /* Pods_GameApp_2_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		516316E4CE48CF3C573D3C38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05C6A1E50ABD95E1F9327774 /* Pods_GameApp_2_0.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6685A18727E1EB84007EBE9E = {
 			isa = PBXGroup;
 			children = (
 				6685A19227E1EB84007EBE9E /* GameApp 2.0 */,
 				6685A19127E1EB84007EBE9E /* Products */,
+				D449DD74FC9AE97AF0448C09 /* Pods */,
+				516316E4CE48CF3C573D3C38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +103,7 @@
 				6685A19C27E1EB85007EBE9E /* Assets.xcassets */,
 				6685A19E27E1EB85007EBE9E /* LaunchScreen.storyboard */,
 				6685A1A127E1EB85007EBE9E /* Info.plist */,
+				662658D027EB405A008B1030 /* GoogleService-Info.plist */,
 			);
 			path = "GameApp 2.0";
 			sourceTree = "<group>";
@@ -144,6 +162,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		D449DD74FC9AE97AF0448C09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42D282A3B911FEE6BC47F974 /* Pods-GameApp 2.0.debug.xcconfig */,
+				1AE98A54C89B47C5721003E3 /* Pods-GameApp 2.0.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6685A1A427E1EB85007EBE9E /* Build configuration list for PBXNativeTarget "GameApp 2.0" */;
 			buildPhases = (
+				EC68C7F24B651102229242FD /* [CP] Check Pods Manifest.lock */,
 				6685A18C27E1EB84007EBE9E /* Sources */,
 				6685A18D27E1EB84007EBE9E /* Frameworks */,
 				6685A18E27E1EB84007EBE9E /* Resources */,
+				A6DFC7F3960F23EE873EF930 /* [CP] Embed Pods Frameworks */,
+				662658D227EB42C3008B1030 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -206,10 +236,72 @@
 				6685A1A027E1EB85007EBE9E /* LaunchScreen.storyboard in Resources */,
 				6685A1AC27E1ED7A007EBE9E /* Localizable.strings in Resources */,
 				6685A19D27E1EB85007EBE9E /* Assets.xcassets in Resources */,
+				662658D127EB405A008B1030 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		662658D227EB42C3008B1030 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+		A6DFC7F3960F23EE873EF930 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC68C7F24B651102229242FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameApp 2.0-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6685A18C27E1EB84007EBE9E /* Sources */ = {
@@ -375,11 +467,13 @@
 		};
 		6685A1A527E1EB85007EBE9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42D282A3B911FEE6BC47F974 /* Pods-GameApp 2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 58283VP36N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GameApp 2.0/Info.plist";
@@ -387,7 +481,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,17 +491,19 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		6685A1A627E1EB85007EBE9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE98A54C89B47C5721003E3 /* Pods-GameApp 2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 58283VP36N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GameApp 2.0/Info.plist";
@@ -415,7 +511,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,7 +521,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -10,7 +10,7 @@ class GameViewController: UIViewController {
     private var animatorForFishImageView: UIViewPropertyAnimator?
     private var gameResultArray = [GameResults]()
     private let dateFormatter = DateFormatter()
-    private let date = Date.now
+    private let date = Date()
     private let userDefaultsManager = UserDefaultsManager.shared
     private let coreMotionManager = CMMotionManager()
     

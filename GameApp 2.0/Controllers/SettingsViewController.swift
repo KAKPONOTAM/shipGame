@@ -121,7 +121,6 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = .gray
         addSubview()
         setupConstraints()
-        //selectGameElementsIfUserDidntSelectAny()
     }
     
     //MARK: - methods
