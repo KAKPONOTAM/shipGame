@@ -305,4 +305,30 @@ class GameViewController: UIViewController {
             break
         }
     }
+    
+    private func moveSubmarine() {
+        if coreMotionManager.isAccelerometerAvailable {
+            coreMotionManager.accelerometerUpdateInterval = 0.1
+            
+            coreMotionManager.startAccelerometerUpdates(to: .main) { [weak self] data, error in
+                guard let self = self else { return }
+                if let acceleration = data?.acceleration {
+                    if acceleration.z >= 0.8 && acceleration.z <= -0.8 {
+                        self.submarineImageView.frame.origin.y += 50
+                        
+                        if self.submarineImageView.frame.origin.y >= self.view.frame.maxY - self.submarineImageView.frame.height {
+                            self.submarineImageView.frame.origin.y -= 50
+                        }
+                        
+                    } else if acceleration.z <= -0.2 && acceleration.z >= -0.7 {
+                        self.submarineImageView.frame.origin.y -= 50
+                        
+                        if self.submarineImageView.frame.origin.y <= self.view.frame.minY - self.submarineImageView.frame.height {
+                            self.submarineImageView.frame.origin.y += 50
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
