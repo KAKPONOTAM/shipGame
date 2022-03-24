@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		664A008927EC6BDB0086B84A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 664A008827EC6BDB0086B84A /* GoogleService-Info.plist */; };
 		6685A19427E1EB84007EBE9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A19327E1EB84007EBE9E /* AppDelegate.swift */; };
 		6685A19827E1EB84007EBE9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A19727E1EB84007EBE9E /* MainViewController.swift */; };
 		6685A19D27E1EB85007EBE9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6685A19C27E1EB85007EBE9E /* Assets.xcassets */; };
@@ -23,6 +22,7 @@
 		6685A1C227E20970007EBE9E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A1C127E20970007EBE9E /* UserDefaults.swift */; };
 		6685A1C527E20ED4007EBE9E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A1C427E20ED4007EBE9E /* FileManager.swift */; };
 		6685A1C827E22BCB007EBE9E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685A1C727E22BCB007EBE9E /* UserDefaultsManager.swift */; };
+		66DF8C4027ECCE26006D78E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66DF8C3F27ECCE26006D78E7 /* GoogleService-Info.plist */; };
 		C0A73EF580585E096D2E7496 /* Pods_GameApp_2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C6A1E50ABD95E1F9327774 /* Pods_GameApp_2_0.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,6 @@
 		05C6A1E50ABD95E1F9327774 /* Pods_GameApp_2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameApp_2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE98A54C89B47C5721003E3 /* Pods-GameApp 2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameApp 2.0.release.xcconfig"; path = "Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0.release.xcconfig"; sourceTree = "<group>"; };
 		42D282A3B911FEE6BC47F974 /* Pods-GameApp 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameApp 2.0.debug.xcconfig"; path = "Target Support Files/Pods-GameApp 2.0/Pods-GameApp 2.0.debug.xcconfig"; sourceTree = "<group>"; };
-		664A008827EC6BDB0086B84A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6685A19027E1EB84007EBE9E /* GameApp 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameApp 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6685A19327E1EB84007EBE9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6685A19727E1EB84007EBE9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		6685A1C127E20970007EBE9E /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		6685A1C427E20ED4007EBE9E /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		6685A1C727E22BCB007EBE9E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		66DF8C3F27ECCE26006D78E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				6685A19227E1EB84007EBE9E /* GameApp 2.0 */,
+				66DF8C3F27ECCE26006D78E7 /* GoogleService-Info.plist */,
 				6685A19127E1EB84007EBE9E /* Products */,
 				D449DD74FC9AE97AF0448C09 /* Pods */,
 				516316E4CE48CF3C573D3C38 /* Frameworks */,
@@ -103,7 +104,6 @@
 				6685A19C27E1EB85007EBE9E /* Assets.xcassets */,
 				6685A19E27E1EB85007EBE9E /* LaunchScreen.storyboard */,
 				6685A1A127E1EB85007EBE9E /* Info.plist */,
-				664A008827EC6BDB0086B84A /* GoogleService-Info.plist */,
 			);
 			path = "GameApp 2.0";
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6685A1A027E1EB85007EBE9E /* LaunchScreen.storyboard in Resources */,
-				664A008927EC6BDB0086B84A /* GoogleService-Info.plist in Resources */,
+				66DF8C4027ECCE26006D78E7 /* GoogleService-Info.plist in Resources */,
 				6685A1AC27E1ED7A007EBE9E /* Localizable.strings in Resources */,
 				6685A19D27E1EB85007EBE9E /* Assets.xcassets in Resources */,
 			);
@@ -245,21 +245,22 @@
 /* Begin PBXShellScriptBuildPhase section */
 		662658D227EB42C3008B1030 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\n";
 		};
 		A6DFC7F3960F23EE873EF930 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -381,7 +382,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -398,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -454,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

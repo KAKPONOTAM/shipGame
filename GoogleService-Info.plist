@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>274514200272-27kokodm5bkc1d0v7hufabdb5idr7cdc.apps.googleusercontent.com</string>
+	<string>983753281482-cpiib0puicn2s4cjj02pgbti3l0gm065.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.274514200272-27kokodm5bkc1d0v7hufabdb5idr7cdc</string>
+	<string>com.googleusercontent.apps.983753281482-cpiib0puicn2s4cjj02pgbti3l0gm065</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDJqOEPCjHsm-Qvjr7SgV-OPn8GJQqPk30</string>
+	<string>AIzaSyBeKgJ5fH3I-fbxibNzdPuiG2OKdvMFnGw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>274514200272</string>
+	<string>983753281482</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>danilSabitov.GameApp-2-0</string>
 	<key>PROJECT_ID</key>
-	<string>shipgame-14149</string>
+	<string>shipgame-fa0d6</string>
 	<key>STORAGE_BUCKET</key>
-	<string>shipgame-14149.appspot.com</string>
+	<string>shipgame-fa0d6.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:274514200272:ios:1274b29777e3e9e14280d5</string>
+	<string>1:983753281482:ios:aa8a8b9dd846b6a4ef0933</string>
 </dict>
 </plist>
