@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>977866736509-a3ejrqjvcj51ubdglppkm4r1v2qqlbeg.apps.googleusercontent.com</string>
+	<string>274514200272-27kokodm5bkc1d0v7hufabdb5idr7cdc.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.977866736509-a3ejrqjvcj51ubdglppkm4r1v2qqlbeg</string>
+	<string>com.googleusercontent.apps.274514200272-27kokodm5bkc1d0v7hufabdb5idr7cdc</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCdC4NhyahmZaXZoljbGU8AMlQhF2I4H6U</string>
+	<string>AIzaSyDJqOEPCjHsm-Qvjr7SgV-OPn8GJQqPk30</string>
 	<key>GCM_SENDER_ID</key>
-	<string>977866736509</string>
+	<string>274514200272</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>danilSabitov.GameApp-2-0</string>
 	<key>PROJECT_ID</key>
-	<string>weatherapp-d0552</string>
+	<string>shipgame-14149</string>
 	<key>STORAGE_BUCKET</key>
-	<string>weatherapp-d0552.appspot.com</string>
+	<string>shipgame-14149.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:977866736509:ios:d8a4a59413f2a8115f0214</string>
+	<string>1:274514200272:ios:1274b29777e3e9e14280d5</string>
 </dict>
 </plist>

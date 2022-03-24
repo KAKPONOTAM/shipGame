@@ -7,7 +7,6 @@ target 'GameApp 2.0' do
 
   inhibit_all_warnings!
   
-  pod 'FirebaseCrashlytics'
-  pod 'Firebase'
+  pod 'Firebase/Crashlytics'
 
 end
